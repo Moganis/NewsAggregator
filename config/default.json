@@ -1,0 +1,3 @@
+{
+  "mongoURI": "mongodb+srv://asif10388:bsnmpc1998@newsaggregator.9tgz8.mongodb.net/newsaggregatorDB?retryWrites=true&w=majority"
+}
