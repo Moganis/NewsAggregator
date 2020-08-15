@@ -9,7 +9,6 @@ const auth = require("../../middleware/auth.middleware");
 
 const Profile = require("../../models/Profile");
 const User = require("../../models/User");
-const { profile_url } = require("gravatar");
 
 // @route GET    ->   api/profile/me(Individual Profile)
 // @description  ->   Get current user's profile
