@@ -1,22 +1,21 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const dbAuth = require('../models/dbScript');
-
+const dbAuth = require("../models/dbScript");
 
 //GET Requests
-router.get('/', async (req, res) => {
-    try {
-        let dbInfo = await dbAuth.find();
-        const arrayOfIds = [];
-        dbInfo.forEach(element => {
-            arrayOfIds.push(element)
-        });
+// router.get('/', async (req, res) => {
+//     try {
+//         let dbInfo = await dbAuth.find();
+//         const arrayOfIds = [];
+//         dbInfo.forEach(element => {
+//             arrayOfIds.push(element)
+//         });
 
-        res.json(arrayOfIds);
-    } catch (err) {
-        res.json({message:err});
-    }
-})
+//         res.json(arrayOfIds);
+//     } catch (err) {
+//         res.json({message:err});
+//     }
+// })
 
 //Post Something
 // router.post('/', async (req, res) => {
@@ -66,7 +65,6 @@ router.get('/', async (req, res) => {
 
 // })
 
-
 // //GET Requests by specific properties
 // router.get('/:apiId', async (req, res) =>{
 //     try {
@@ -86,7 +84,5 @@ router.get('/', async (req, res) => {
 //         res.json({message:err})
 //     }
 // })
-
-
 
 module.exports = router;

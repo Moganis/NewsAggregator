@@ -22,7 +22,7 @@ app.get("/", function (req, res) {
 });
 
 app.get("*", function (req, res) {
-  res.send("404 Not Found!");
+  res.send("404 Not Foundaaaa!");
 });
 
 app.listen(PORT, () => {

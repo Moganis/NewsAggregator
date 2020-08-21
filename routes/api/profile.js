@@ -9,6 +9,7 @@ const auth = require("../../middleware/auth.middleware");
 
 const Profile = require("../../models/Profile");
 const User = require("../../models/User");
+const Posts = require("../../models/Posts");
 
 // @route GET    ->   api/profile/me(Individual Profile)
 // @description  ->   Get current user's profile
@@ -44,12 +45,12 @@ router.post(
   ],
   async (req, res) => {
     const errors = validationResult(req);
+
     if (!errors.isEmpty()) {
       return res.status(400).json({ errors: errors.array() });
     }
 
     const {
-      handle,
       company,
       website,
       location,
@@ -66,8 +67,8 @@ router.post(
 
     //Build Profile object
     const profileFields = {};
+
     profileFields.user = req.user.id;
-    if (handle) profileFields.handle = handle;
     if (company) profileFields.company = company;
     if (website) profileFields.website = website;
     if (location) profileFields.location = location;
@@ -86,8 +87,9 @@ router.post(
 
     try {
       let profile = await Profile.findOne({ user: req.user.id });
+
       if (profile) {
-        profile = await Profile.findByIdAndUpdate(
+        profile = await Profile.findOneAndUpdate(
           { user: req.user.id },
           { $set: profileFields },
           { new: true }
@@ -147,6 +149,9 @@ router.get("/user/:user_id", async (req, res) => {
 // @access       ->   Private
 router.delete("/", auth, async (req, res) => {
   try {
+    //Remove user posts
+
+    await Posts.deleteMany({ user: req.user.id });
     //remove profile
     await Profile.findOneAndRemove({ user: req.user.id });
     //remove user
