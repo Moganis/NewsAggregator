@@ -9,7 +9,7 @@ const PostForm = ({ addPost }) => {
   return (
     <div class="post-form">
       <div class="bg-primary p">
-        <h3>Say Something...</h3>
+        <h3>Trouble with chemistry ? Don't understand a math ? Ask here!</h3>
       </div>
       <form
         class="form my-1"
@@ -25,7 +25,7 @@ const PostForm = ({ addPost }) => {
           rows="5"
           value={text}
           onChange={(e) => setText(e.target.value)}
-          placeholder="Create a post"
+          placeholder="Ask a question"
           required
         ></textarea>
         <input type="submit" class="btn btn-dark my-1" value="Submit" />

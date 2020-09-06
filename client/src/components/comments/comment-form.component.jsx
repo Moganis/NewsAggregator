@@ -9,7 +9,7 @@ const CommentForm = ({ addComment, postId }) => {
   return (
     <div class="post-form">
       <div class="bg-primary p">
-        <h3>Leave a comment</h3>
+        <h3>Know the answer to this? Answer this question!</h3>
       </div>
       <form
         class="form my-1"
@@ -25,7 +25,7 @@ const CommentForm = ({ addComment, postId }) => {
           rows="5"
           value={text}
           onChange={(e) => setText(e.target.value)}
-          placeholder="Leave a comment"
+          placeholder="Answer this question!"
           required
         ></textarea>
         <input type="submit" class="btn btn-dark my-1" value="Submit" />
