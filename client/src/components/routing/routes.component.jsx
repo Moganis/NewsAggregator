@@ -6,7 +6,7 @@ import Login from "../auth/login.component";
 import Alert from "../layout/alert.component";
 import Dashboard from "../dashboard/dashboard.component";
 import PrivateRoute from "../routing/private-route.component";
-//import NotFound from "../not-found/not-found.component";
+import NotFound from "../not-found/not-found.component";
 
 import CreateProfile from "../profile-forms/create-profile.component";
 import EditProfile from "../profile-forms/edit-profile.component";
@@ -22,7 +22,6 @@ const Routes = (props) => {
     <section className="container">
       <Alert />
       <Switch>
-        {/* <Route component={NotFound} /> */}
         <Route exact path="/register" component={Register} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/profiles" component={Profiles} />
@@ -34,6 +33,7 @@ const Routes = (props) => {
         <PrivateRoute exact path="/add-education" component={AddEducation} />
         <PrivateRoute exact path="/posts" component={Posts} />
         <PrivateRoute exact path="/posts/:id" component={Post} />
+        <Route component={NotFound} />
       </Switch>
     </section>
   );
