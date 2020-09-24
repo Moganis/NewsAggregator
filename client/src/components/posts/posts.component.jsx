@@ -17,7 +17,7 @@ const Posts = ({ getPosts, post: { posts, loading } }) => {
     <Spinner />
   ) : (
     <Fragment>
-      <h1 class="large text-primary">Posts</h1>
+      <h1 class="large text-primary">Questions</h1>
       <p class="lead">
         <i class="fas fa-user"></i> Welcome to the community!
       </p>

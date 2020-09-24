@@ -8,7 +8,7 @@ import ProfileTop from "./profile-top.component";
 import ProfileAbout from "./profile-about.component";
 import ProfileExperience from "./profile-experience.component";
 import ProfileEducation from "./profile-education.component";
-import ProfileGithub from "./profile-github.component";
+// import ProfileGithub from "./profile-github.component";
 
 import { getProfileById } from "../../redux/reducers/profile/profile.actions";
 
@@ -42,7 +42,7 @@ const Profile = ({
             <ProfileTop profile={profile} />
             <ProfileAbout profile={profile} />
             <div className="profile-exp bg-white p-2">
-              <h2 class="text-primary">Experience</h2>
+              <h2 class="text-primary">Internship Experience</h2>
               {profile.experience.length > 0 ? (
                 <Fragment>
                   {profile.experience.map((experience) => (
@@ -53,7 +53,7 @@ const Profile = ({
                   ))}
                 </Fragment>
               ) : (
-                <h4>No Experience Credetials</h4>
+                <h4>No Internship Experience Credetials</h4>
               )}
             </div>
             <div class="profile-edu bg-white p-2">
@@ -73,9 +73,9 @@ const Profile = ({
               )}
             </div>
 
-            {profile.githubusername && (
+            {/* {profile.githubusername && (
               <ProfileGithub username={profile.githubusername} />
-            )}
+            )} */}
           </div>
         </Fragment>
       )}

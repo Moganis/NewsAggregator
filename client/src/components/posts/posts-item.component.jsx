@@ -20,7 +20,7 @@ const PostItem = ({
 }) => {
   return (
     <div className="post bg-white p-1 my-1">
-      <div>
+      <div className="flex">
         <Link to={`/profile/${user}`}>
           <img className="round-img" src={avatar} alt="" />
           <h4>{name}</h4>
@@ -39,7 +39,7 @@ const PostItem = ({
               type="button"
               className="btn btn-light"
             >
-              <i class="fas fa-sort-up"></i>{" "}
+              <i class="fas fa-caret-up"></i>{" "}
               {likes.length > 0 && <span>{likes.length}</span>}
             </button>
             <button
@@ -47,7 +47,7 @@ const PostItem = ({
               type="button"
               className="btn btn-light"
             >
-              <i class="fas fa-sort-down"></i>
+              <i class="fas fa-caret-down"></i>
             </button>
             <Link to={`/posts/${_id}`} className="btn btn-primary">
               Discussion{" "}

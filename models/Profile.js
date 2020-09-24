@@ -6,12 +6,12 @@ const ProfileSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "user",
   },
-  company: {
-    type: String,
-  },
-  website: {
-    type: String,
-  },
+  // company: {
+  //   type: String,
+  // },
+  // website: {
+  //   type: String,
+  // },
   location: {
     type: String,
   },
@@ -19,16 +19,16 @@ const ProfileSchema = new Schema({
     type: String,
     required: true,
   },
-  skills: {
-    type: [String],
-    required: true,
-  },
+  // skills: {
+  //   type: [String],
+  //   required: true,
+  // },
   bio: {
     type: String,
   },
-  githubusername: {
-    type: String,
-  },
+  // githubusername: {
+  //   type: String,
+  // },
   experience: [
     {
       title: {

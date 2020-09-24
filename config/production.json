@@ -1,0 +1,6 @@
+{
+  "mongoURI": "mongodb+srv://asif10388:bsnmpc1998@newsaggregator.9tgz8.mongodb.net/newsaggregatorDB?retryWrites=true&w=majority",
+  "jwtSecret": "shhhhhhh",
+  "githubClientId": "1426ae439008a9703b38",
+  "githubSecret": "1d290f47b808c42d8113c901519f2f86f5fc05ea"
+}

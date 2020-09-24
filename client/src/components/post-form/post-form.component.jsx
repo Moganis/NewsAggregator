@@ -9,7 +9,7 @@ const PostForm = ({ addPost }) => {
   return (
     <div class="post-form">
       <div class="bg-primary p">
-        <h3>Trouble with chemistry ? Don't understand a math ? Ask here!</h3>
+        <h3>Get answers to your higher study questions from our experts!</h3>
       </div>
       <form
         class="form my-1"

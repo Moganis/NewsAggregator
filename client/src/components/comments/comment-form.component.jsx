@@ -9,7 +9,7 @@ const CommentForm = ({ addComment, postId }) => {
   return (
     <div class="post-form">
       <div class="bg-primary p">
-        <h3>Know the answer to this? Answer this question!</h3>
+        <h3>Help a fellow student out by answering his question!</h3>
       </div>
       <form
         class="form my-1"

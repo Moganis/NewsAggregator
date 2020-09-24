@@ -78,26 +78,26 @@ export const getProfileById = (userId) => async (dispatch) => {
 
 //Get users github repos
 
-export const getGithubRepos = (username) => async (dispatch) => {
-  //dispatch({ type: CLEAR_PROFILE });
+// export const getGithubRepos = (username) => async (dispatch) => {
+//   //dispatch({ type: CLEAR_PROFILE });
 
-  try {
-    const res = await axios.get(`/api/profile/github/${username}`);
+//   try {
+//     const res = await axios.get(`/api/profile/github/${username}`);
 
-    dispatch({
-      type: GET_REPOS,
-      payload: res.data,
-    });
-  } catch (error) {
-    dispatch({
-      type: PROFILE_ERROR,
-      payload: {
-        message: error.response.statusText,
-        status: error.response.status,
-      },
-    });
-  }
-};
+//     dispatch({
+//       type: GET_REPOS,
+//       payload: res.data,
+//     });
+//   } catch (error) {
+//     dispatch({
+//       type: PROFILE_ERROR,
+//       payload: {
+//         message: error.response.statusText,
+//         status: error.response.status,
+//       },
+//     });
+//   }
+// };
 
 //Create or update users profile
 

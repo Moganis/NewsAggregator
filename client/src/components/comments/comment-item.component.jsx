@@ -14,7 +14,7 @@ const CommentItem = ({
 }) => {
   return (
     <div className="post bg-white p-1 my-1">
-      <div>
+      <div className="flex">
         <Link to={`/profile/${user}`}>
           <img className="round-img" src={avatar} alt="" />
           <h4>{name}</h4>

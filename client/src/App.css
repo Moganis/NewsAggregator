@@ -1,7 +1,6 @@
-/* Global Styles */
 :root {
   --primary-color: #065446;
-  --secondary-color:#fadcac;
+  --secondary-color: #fadcac;
   --dark-color: #343a40;
   --light-color: #f4f4f4;
   --danger-color: #dc3545;
@@ -15,7 +14,7 @@
 }
 
 body {
-  font-family: "Raleway", sans-serif;
+  font-family: "Jost";
   font-size: 1rem;
   line-height: 1.6;
   background-color: #fff;
@@ -32,7 +31,7 @@ ul {
 }
 
 img {
-  width: 100%;
+  width: 60%;
 }
 
 /* Utilities */
@@ -128,7 +127,7 @@ img {
 }
 
 .btn {
-  font-family: 'Roboto Slab';
+  font-family: "Roboto Slab";
   font-weight: bold;
   display: inline-block;
   background: var(--light-color);
@@ -140,7 +139,7 @@ img {
   margin-right: 0.5rem;
   transition: opacity 0.2s ease-in;
   outline: none;
-  border:none;
+  border: none;
 }
 
 .badge {
@@ -260,6 +259,7 @@ img {
   padding: 0.4rem;
   font-size: 1.2rem;
   border: 1px solid #ccc;
+  font-family: "Jost";
 }
 
 .form input[type="submit"],
@@ -306,6 +306,7 @@ button {
 .navbar {
   display: flex;
   justify-content: space-between;
+  background-color: #343a40;
   align-items: center;
   padding: 0.7rem 2rem;
   position: fixed;
@@ -314,8 +315,8 @@ button {
   top: 0;
   border-bottom: solid 1px var(--primary-color);
   opacity: 0.9;
-  font-family: 'Jost';
-  font-weight: 'bold';
+  font-family: "Jost";
+  font-weight: "bold";
   font-size: 1.2rem;
 }
 
@@ -330,7 +331,7 @@ button {
 }
 
 .navbar a:hover {
-  color: var(--secondary-color);
+  color: #fadcac;
 }
 
 .navbar .welcome span {
@@ -340,8 +341,9 @@ button {
 /* Landing Page */
 .landing {
   position: relative;
-  background: url("https://images.unsplash.com/photo-1504639725590-34d0984388bd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=667&q=80")
-    no-repeat center center/cover;
+  background: url("https://images.unsplash.com/photo-1556711905-b3f402e1ff80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80")
+    no-repeat;
+  background-size: cover;
   height: 100vh;
 }
 
@@ -389,7 +391,7 @@ button {
 }
 
 .profile-top img {
-  width: 250px;
+  width: 150px;
 }
 
 .profile-top .icons a {

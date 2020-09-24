@@ -38,11 +38,7 @@ router.get("/me", auth, async (req, res) => {
 // @access       ->   Private
 router.post(
   "/",
-  [
-    auth,
-    check("status", "Status is required").not().isEmpty(),
-    check("skills", "Skills is required").not().isEmpty(),
-  ],
+  [auth, check("status", "Status is required").not().isEmpty()],
   async (req, res) => {
     const errors = validationResult(req);
 
@@ -51,13 +47,13 @@ router.post(
     }
 
     const {
-      company,
-      website,
+      // company,
+      // website,
       location,
       bio,
       status,
-      githubusername,
-      skills,
+      // githubusername,
+      // skills,
       youtube,
       facebook,
       twitter,
@@ -69,15 +65,15 @@ router.post(
     const profileFields = {};
 
     profileFields.user = req.user.id;
-    if (company) profileFields.company = company;
-    if (website) profileFields.website = website;
+    // if (company) profileFields.company = company;
+    // if (website) profileFields.website = website;
     if (location) profileFields.location = location;
     if (bio) profileFields.bio = bio;
     if (status) profileFields.status = status;
-    if (githubusername) profileFields.githubusername = githubusername;
-    if (skills) {
-      profileFields.skills = skills.split(",").map((skill) => skill.trim());
-    }
+    // if (githubusername) profileFields.githubusername = githubusername;
+    // if (skills) {
+    //   profileFields.skills = skills.split(",").map((skill) => skill.trim());
+    // }
     profileFields.social = {};
     if (youtube) profileFields.social.youtube = youtube;
     if (twitter) profileFields.social.twitter = twitter;
@@ -310,37 +306,37 @@ router.delete("/education/:edu_id", auth, async (req, res) => {
   }
 });
 
-// @route GET    ->   api/profile/github/:username
-// @description  ->   Get user repos from github
-// @access       ->   Public
-router.get("/github/:username", async (req, res) => {
-  try {
-    const options = {
-      uri: `https://api.github.com/users/${
-        req.params.username
-      }/repos?per_page=5&sort=created:asc&client_id=${config.get(
-        "githubClientId"
-      )}&client_secret=${config.get("githubSecret")}`,
-      method: "GET",
-      headers: { "user-agent": "node-js" },
-    };
+// // @route GET    ->   api/profile/github/:username
+// // @description  ->   Get user repos from github
+// // @access       ->   Public
+// router.get("/github/:username", async (req, res) => {
+//   try {
+//     const options = {
+//       uri: `https://api.github.com/users/${
+//         req.params.username
+//       }/repos?per_page=5&sort=created:asc&client_id=${config.get(
+//         "githubClientId"
+//       )}&client_secret=${config.get("githubSecret")}`,
+//       method: "GET",
+//       headers: { "user-agent": "node-js" },
+//     };
 
-    request(options, (error, response, body) => {
-      if (error) console.log(error);
+//     request(options, (error, response, body) => {
+//       if (error) console.log(error);
 
-      if (response.statusCode !== 200) {
-        return res.status(404).json({ message: "Profile not found" });
-      }
+//       if (response.statusCode !== 200) {
+//         return res.status(404).json({ message: "Profile not found" });
+//       }
 
-      res.json(JSON.parse(body));
-    });
-  } catch (error) {
-    console.error(error.message);
-    if (error.kind === "ObjectId") {
-      return res.status(400).json({ message: "Profile not found" });
-    }
-    res.status(500).send("Internal Server Error");
-  }
-});
+//       res.json(JSON.parse(body));
+//     });
+//   } catch (error) {
+//     console.error(error.message);
+//     if (error.kind === "ObjectId") {
+//       return res.status(400).json({ message: "Profile not found" });
+//     }
+//     res.status(500).send("Internal Server Error");
+//   }
+// });
 
 module.exports = router;
